@@ -1,0 +1,17 @@
+CREATE PROCEDURE procreport80 (
+@n int
+)
+AS
+select Prodavci.FIO ,
+Nazvanie_firmi,
+ Nazvanie  ,
+   Data,
+   Cena ,
+   Kolichestvo ,magazin.adres,Naimenovanie_tovara,
+ Prodazha.Artikul ,Cena*Kolichestvo as summa
+from Prodazha inner join Pokupateli on Prodazha.Nomer_pokupatelya=Pokupateli.Nomer_pokupatelya
+inner join magazin on  Prodazha.Nomer_magazina=magazin.Nomer_magazina
+inner join katalog on Prodazha.Artikul=katalog.Artikul
+inner join prodavci on  Prodazha.Lichniy_nomer=prodavci.Lichniy_nomer
+where Prodazha.Nomer_pokupatelya=@n
+

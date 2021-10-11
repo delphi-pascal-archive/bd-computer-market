@@ -1,0 +1,9 @@
+select Lichniy_nomer ,
+   Nomer_postavschika ,
+   Nomer_pokupatelya ,
+   Nomer_magazina,
+   Data,
+   Cena ,
+   Kolichestvo ,
+   Artikul 
+from Zakazi
